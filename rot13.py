@@ -6,7 +6,7 @@ Kenzie Assignment: rot13
 
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Bethany Folino"
 
 import sys
 from string import ascii_lowercase, ascii_uppercase
@@ -17,8 +17,12 @@ def rotate(message):
     Returns the encoded or decoded message.
     """
     rot_message = ''
-    # Your code here
 
+    shift = str.maketrans(
+        ascii_uppercase + ascii_lowercase,
+        ascii_uppercase[13:] + ascii_uppercase[:13] +
+        ascii_lowercase[13:] + ascii_lowercase[:13])
+    rot_message = str.translate(message, shift)
     return rot_message
 
 
